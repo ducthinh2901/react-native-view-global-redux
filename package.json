@@ -1,62 +1,16 @@
-{
-  "_args": [
-    [
-      {
-        "raw": "react-native-view-global-redux@^1.0.3",
-        "scope": null,
-        "escapedName": "react-native-view-global-redux",
-        "name": "react-native-view-global-redux",
-        "rawSpec": "^1.0.3",
-        "spec": ">=1.0.3 <2.0.0",
-        "type": "range"
-      },
-      "G:\\ReactNative\\QSOnline"
-    ]
-  ],
-  "_from": "react-native-view-global-redux@>=1.0.3 <2.0.0",
-  "_id": "react-native-view-global-redux@1.0.3",
-  "_inCache": true,
-  "_location": "/react-native-view-global-redux",
-  "_nodeVersion": "8.9.1",
-  "_npmOperationalInternal": {
-    "host": "s3://npm-registry-packages",
-    "tmp": "tmp/react-native-view-global-redux-1.0.3.tgz_1515592576995_0.7278807340189815"
-  },
-  "_npmUser": {
-    "name": "sebbal",
-    "email": "sebastian.balay@wolox.com.ar"
-  },
-  "_npmVersion": "5.5.1",
-  "_phantomChildren": {},
-  "_requested": {
-    "raw": "react-native-view-global-redux@^1.0.3",
-    "scope": null,
-    "escapedName": "react-native-view-global-redux",
-    "name": "react-native-view-global-redux",
-    "rawSpec": "^1.0.3",
-    "spec": ">=1.0.3 <2.0.0",
-    "type": "range"
-  },
-  "_requiredBy": [
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/react-native-view-global-redux/-/react-native-view-global-redux-1.0.3.tgz",
-  "_shasum": "85c928774d1cd18b0c88689e895f748c2a27d87e",
-  "_shrinkwrap": null,
-  "_spec": "react-native-view-global-redux@^1.0.3",
-  "_where": "G:\\ReactNative\\QSOnline",
+{ 
   "author": {
-    "name": "Sebastian Balay",
-    "email": "sebastian.balay@wolox.com.ar"
+    "name": "ducthinh2901",
+    "email": "ducthinh2901@gmail.com"
   },
   "bugs": {
-    "url": "https://github.com/Wolox/react-native-view-global-redux/issues"
+    "url": "https://github.com/ducthinh2901/react-native-view-global-redux/issues"
   },
   "dependencies": {
     "prop-types": "^15.5.10",
     "seamless-immutable": "^7.1.2"
   },
-  "description": "Cross platform implementation of Android's toast component. Easy to customize and integrate with redux. 100% written in JS.",
+  "description": "",
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-eslint": "^7.2.2",
@@ -78,14 +32,8 @@
     "react-native": "^0.43.3",
     "react-redux": "^5.0.4"
   },
-  "directories": {},
-  "dist": {
-    "integrity": "sha512-tToKzAW5XQloJlRD5m/OlKH91qC29CEpG4PNOLrQ1nTJBMlhtVz3nMng9suMASinoaA4w984iFfWPR1heUsQmg==",
-    "shasum": "85c928774d1cd18b0c88689e895f748c2a27d87e",
-    "tarball": "https://registry.npmjs.org/react-native-view-global-redux/-/react-native-view-global-redux-1.0.3.tgz"
-  },
-  "gitHead": "4218228cf68de901c386ca5bb19ca3840308ff1d",
-  "homepage": "https://github.com/Wolox/react-native-view-global-redux",
+  "directories": {}, 
+  "homepage": "https://github.com/ducthinh2901/react-native-view-global-redux",
   "keywords": [
     "react-native",
     "toast",
@@ -98,13 +46,9 @@
   "main": "lib/index.js",
   "maintainers": [
     {
-      "name": "wfolini",
-      "email": "walterfolini@gmail.com"
-    },
-    {
-      "name": "sebbal",
-      "email": "sebastian.balay@wolox.com.ar"
-    }
+      "name": "ducthinh2901",
+      "email": "ducthinh2901@gmail.com"
+    }, 
   ],
   "name": "react-native-view-global-redux",
   "optionalDependencies": {},
@@ -114,7 +58,7 @@
     "react-redux": "^5.0.4",
     "redux": "^3.6.0"
   },
-  "readme": "React Native Redux Toast\n==================\n\n## Features\n\n- Cross platform.\n- Triggered dispatching redux actions\n- 100% written in js. No need to link native dependencies\n- Easy to customize\n\nAndroid | iOS\n:-------------------------:|:-------------------------:\n![Toast Android](Assets/toast-android.gif \"Android\")  |  ![Toast iOS](Assets/toast-ios.gif \"iOS\")\n\n## Installation\n\n#### npm\n```bash\nnpm install --save react-native-view-global-redux\n```\n\n#### yarn\n```bash\nyarn add react-native-view-global-redux\n```\n\n## Usage\n\n1- Add the toast reducer to your store\n\n```js\nimport { createStore, combineReducers } from 'redux';\nimport { toastReducer as toast } from 'react-native-view-global-redux';\n\nconst reducers = combineReducers({\n  toast\n});\n\nexport default createStore(reducers);\n```\n\n2- Mount the toast component where you want to use it. (Usually at the root level of the app)\n\n```js\nimport React from 'react';\nimport { Provider } from 'react-redux';\nimport { View } from 'react-native';\nimport { Toast } from 'react-native-view-global-redux';\n\nimport store from './store';\nimport App from './app';\n\nexport default function main() {\n  return (\n    <Provider store={store}>\n      <View style={{ flex: 1 }}>\n        <App />\n        <Toast messageStyle={{ color: 'white' }} />\n      </View>\n    </Provider>\n  );\n}\n\n```\n\n3- Dispatch actions\n\n```js\nclass App extends Component {\n  displayErrorToast = () => {\n    this.props.dispatch(ToastActionsCreators.displayError('Error toast!'));\n  };\n\n  displayWarningToast = () => {\n    this.props.dispatch(ToastActionsCreators.displayWarning('Warning toast!', 2000));\n  };\n\n  displayInfoToast = () => {\n    this.props.dispatch(ToastActionsCreators.displayInfo('Info toast!', 5000));\n  };\n\n  render() {\n    return (\n      <View>\n        <Button title={'Info Toast!'} onPress={this.displayInfoToast} />\n        <Button title={'Warning Toast!'} onPress={this.displayWarningToast} />\n        <Button title={'Error Toast!'} onPress={this.displayErrorToast} />\n      </View>\n    );\n  }\n}\n\n```\n\n## API\n\n#### Props\n\n- **containerStyle:** (View.propTypes.style) Styles to apply to the View that wraps the Toast\n\n- **messageStyle:** (Text.propTypes.style)\nStyles to apply to the Text component of the Toast\n\n- **errorStyle:** (View.propTypes.style)\nSame as containerStyle, only applied when the error Toast is being used\n\n- **warningStyle:** (View.propTypes.style)\nSame as containerStyle, only applied when the warning Toast is being used\n\n- **getMessageComponent:** (React.PropTypes.func)\nFunction that returns a component to be used inside the Toast. Receives two params: message and an object: { error: bool, warning: bool }.\nDefault value:\n```js\nToast.defaultProps = {\n  getMessageComponent(message) {\n    return (\n      <Text style={this.messageStyle}>\n        {message}\n      </Text>\n    );\n  }\n};\n```\n\n## Contributing\n\n1. Fork it\n2. Create your feature branch (`git checkout -b my-new-feature`)\n3. Commit your changes (`git commit -am 'Add some feature'`)\n4. Push to the branch (`git push origin my-new-feature`)\n5. Create new Pull Request\n\n## About\n\nThis project is maintained by [Sebastian Balay](https://github.com/sbalay) and it was written by [Wolox](http://www.wolox.com.ar).\n\n![Wolox](https://raw.githubusercontent.com/Wolox/press-kit/master/logos/logo_banner.png)\n\n\n## License\n\n**react-native-view-global-redux** is available under the MIT [license](LICENSE).\n\n    Copyright (c) 2017 Sebastián Balay <sebastian.balay@wolox.com.ar>\n\n    Permission is hereby granted, free of charge, to any person obtaining a copy\n    of this software and associated documentation files (the \"Software\"), to deal\n    in the Software without restriction, including without limitation the rights\n    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n    copies of the Software, and to permit persons to whom the Software is\n    furnished to do so, subject to the following conditions:\n\n    The above copyright notice and this permission notice shall be included in\n    all copies or substantial portions of the Software.\n\n    THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\n    THE SOFTWARE.\n",
+  "readme": "",
   "readmeFilename": "README.md",
   "repository": {
     "type": "git",
@@ -129,5 +73,5 @@
     "prepublish": "npm run build",
     "test": "jest"
   },
-  "version": "1.0.3"
+  "version": "1.0.0"
 }
