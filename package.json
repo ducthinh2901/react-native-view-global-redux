@@ -1,16 +1,39 @@
-{ 
-  "author": {
-    "name": "ducthinh2901",
-    "email": "ducthinh2901@gmail.com"
+{
+  "name": "react-native-view-global-redux",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "lint": "eslint src && eslint index.js",
+    "test": "jest",
+    "coverage": "jest --coverage",
+    "build": "babel index.js -d lib && babel src -d lib/src",
+    "prepublish": "npm run build",
+    "lint-diff": "git diff --name-only --cached --relative | grep \\\\.js$ | xargs eslint",
+    "precommit": "npm run lint-diff"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ducthinh2901/react-native-view-global-redux.git"
+  },
+  "keywords": [
+    "react-native",
+    "toast",
+    "redux",
+    "javascript",
+    "android",
+    "ios"
+  ],
+  "author": "ducthinh2901@gmail.com>",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ducthinh2901/react-native-view-global-redux/issues"
   },
+  "homepage": "https://github.com/ducthinh2901/react-native-view-global-redux",
   "dependencies": {
     "prop-types": "^15.5.10",
     "seamless-immutable": "^7.1.2"
   },
-  "description": "",
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-eslint": "^7.2.2",
@@ -32,46 +55,10 @@
     "react-native": "^0.43.3",
     "react-redux": "^5.0.4"
   },
-  "directories": {}, 
-  "homepage": "https://github.com/ducthinh2901/react-native-view-global-redux",
-  "keywords": [
-    "react-native",
-    "toast",
-    "redux",
-    "javascript",
-    "android",
-    "ios"
-  ],
-  "license": "MIT",
-  "main": "lib/index.js",
-  "maintainers": [
-    {
-      "name": "ducthinh2901",
-      "email": "ducthinh2901@gmail.com"
-    }, 
-  ],
-  "name": "react-native-view-global-redux",
-  "optionalDependencies": {},
   "peerDependencies": {
     "react": "^15.5.4",
     "react-native": "^0.43.3",
     "react-redux": "^5.0.4",
     "redux": "^3.6.0"
-  },
-  "readme": "",
-  "readmeFilename": "README.md",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Wolox/react-native-view-global-redux.git"
-  },
-  "scripts": {
-    "build": "babel index.js -d lib && babel src -d lib/src",
-    "coverage": "jest --coverage",
-    "lint": "eslint src && eslint index.js",
-    "lint-diff": "git diff --name-only --cached --relative | grep \\\\.js$ | xargs eslint",
-    "precommit": "npm run lint-diff",
-    "prepublish": "npm run build",
-    "test": "jest"
-  },
-  "version": "1.0.0"
+  }
 }
